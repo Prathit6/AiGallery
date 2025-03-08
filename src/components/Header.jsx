@@ -10,7 +10,7 @@ function Header({ toggleForIsGap }) {
 
   return (
     <>
-      {/* Main Header */}
+    
       <header
         className="
           fixed top-0 bg-white right-0 w-full flex items-center 
