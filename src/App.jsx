@@ -1,15 +1,10 @@
-
-
+import { RouterProvider } from "react-router-dom";
+import Routes from "./components/Routes"; 
 
 function App() {
- 
-
-  return (
-    <>
-      <div className="bg-amber-400 absolute top-1/2 left-1/2 ">Our Ai gallery Project</div>
-      
-    </>
-  )
+  return <RouterProvider router={Routes} />; 
 }
 
-export default App
+export default App;
+
+
