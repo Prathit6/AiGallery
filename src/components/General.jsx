@@ -5,9 +5,15 @@ import { useNavigate } from "react-router-dom";
 function General({ isGap }) {
   const [isPhotoClicked, setIsPhotoClicked] = useState(false);
   const toggleForPhotoClicked = () => setIsPhotoClicked(!isPhotoClicked);
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  
   const navigate = useNavigate();
-  function handleClick() {
-    navigate("/fullimage");
+  // function handleClick() {
+  //   navigate("/fullimage");
+  // }
+  const handleClick = (photo) => {
+    navigate("/fullimage", { state: { photo } }); 
   }
   return (
     <div
@@ -20,15 +26,16 @@ function General({ isGap }) {
           key={photo.id}
           className={isGap ? "rounded-lg p-2  overflow-hidden" : ""}
         >
-          <img
-            src={photo.url}
-            alt={photo.title}
-            className={`object-${isGap ? "contain" : "cover"} 
-            lg:w-full lg:h-[300px] cursor-pointer
-            sm:w-full  sm:h-[${isGap ? "200px " : "150px border border-black border-opacity-80 "}] 
-            ${isGap ? "rounded-md" : ""}`}
-            onClick={handleClick}
-          />
+         <img
+  src={photo.url}
+  alt={photo.title}
+  className={`object-${isGap ? "contain" : "cover"} 
+    lg:w-full lg:h-[300px] cursor-pointer
+    sm:w-full sm:h-[calc(170px)] 
+    ${isGap ? "rounded-md" : "sm:border sm:border-black sm:border-opacity-80"}`}
+  onClick={() => handleClick(photo)}
+/>
+
         </div>
       ))}
     </div>

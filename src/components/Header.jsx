@@ -20,7 +20,7 @@ function Header({ toggleForIsGap }) {
       >
         <div className="text-lg sm:text-2xl lg:text-4xl font-[opl3] whitespace-nowrap">
           <h2 className="pl-0 font-bold hover:text-indigo-600 hover:tracking-wide transition-all duration-500">
-            Ai Gallery
+          VisionAI 
           </h2>
         </div>
 
