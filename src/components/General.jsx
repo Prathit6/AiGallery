@@ -3,56 +3,34 @@ import photos from "../data/photos";
 import { useNavigate } from "react-router-dom";
 
 function General({ isGap }) {
-  const [isPhotoClicked, setIsPhotoClicked] = useState(false);
-  const toggleForPhotoClicked = () => setIsPhotoClicked(!isPhotoClicked);
-
-  const [selectedImage, setSelectedImage] = useState(null);
-  
   const navigate = useNavigate();
-  // function handleClick() {
-  //   navigate("/fullimage");
-  // }
-  const handleClick = (photo) => {
-    navigate("/fullimage", { state: { photo } }); 
-  }
-  return (
-    <div
-      className={`grid sm:grid-cols-5 lg:grid-cols-5 ${
-        isGap ? "gap-[5px]" : "gap-0"
-      } justify-center items-center`}
-    >
-      {photos.map((photo) => (
-        <div
-          key={photo.id}
-          className={isGap ? "rounded-lg p-2  overflow-hidden" : ""}
-        >
-         <img
-  src={photo.url}
-  alt={photo.title}
-  className={`object-${isGap ? "contain" : "cover"} 
-    lg:w-full lg:h-[300px] cursor-pointer
-    sm:w-full sm:h-[calc(170px)] 
-    ${isGap ? "rounded-md" : "sm:border sm:border-black sm:border-opacity-80"}`}
-  onClick={() => handleClick(photo)}
-/>
 
-        </div>
-      ))}
+  const handleClick = (photo) => {
+    navigate("/fullimage", { state: { photo } });
+  };
+
+  return (
+    <div className="pt-12 sm:pt-14 md:pt-16 px-4 sm:px-6"> 
+      <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Gallery</h2>
+      <div
+        className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ${
+          isGap ? "gap-[3px] sm:gap-[5px]" : "gap-0"
+        }`}
+      >
+        {photos.map((photo) => (
+          <div key={photo.id} className="aspect-square rounded-lg overflow-hidden">
+            <img
+              src={photo.url}
+              alt={photo.title}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer rounded-md"
+              onClick={() => handleClick(photo)}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default General;
-{
-  /* <div className="grid sm:grid-cols-5   justify-center items-center gap-[5px] lg:grid-cols-5 ">
-      {photos.map((photo) => (
-        <div key={photo.id} className=" rounded-lg p-2 overflow-hidden">
-          <img
-            src={photo.url}
-            alt={photo.title}
-            className="lg:w-[300px] lg:h-[300px] sm:w-[500px] sm:h-[200px] object-contain rounded-md rounded-md"
-          />
-        </div>
-      ))}
-    </div> */
-}
+
