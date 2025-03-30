@@ -37,6 +37,8 @@ const photos = [
       category: "Water",
       author: "Anshi",
       dateAdded: "2025-03-06",
+      heart: false,
+      
     },
     {
       id: 4,
