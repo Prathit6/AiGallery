@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import { useState } from "react";
 
 function Home() {
-  const [isGap, setIsGap] = useState(false);
+  const [isGap, setIsGap] = useState(true);
 
   const toggleForIsGap = () => setIsGap((prev) => !prev);
 

@@ -45,7 +45,7 @@ const Objects = () => {
           <ObjectCategory key={category} category={category} images={images} />
         ))}
       </div>
-      <p className="text-center mt-6 text-gray-500">यहां AI द्वारा ट्राइड फोटो दिखाए जाएंगे।</p>
+    
     </div>
   );
 };

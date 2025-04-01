@@ -11,7 +11,7 @@ import { GiPhotoCamera } from "react-icons/gi";
 const Sidebar = () => {
   const navigate = useNavigate();
   return (
-    <div className="w-64 h-screen fixed  bg-white text-gray-900 p-4 shadow-lg border-r mt-36 border-gray-200">
+    <div className="w-64 h-screen fixed bg-white text-gray-900 p-4 shadow-lg border-r mt-24 border-gray-200">
       <div className="mb-6">
         <h2 className="text-gray-600 text-sm font-semibold mb-2 uppercase">
           Photos
@@ -58,18 +58,12 @@ const Sidebar = () => {
           Collections
         </h2>
         <ul>
-          {/* <li className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
-            <FaRegClock className="mr-2 text-green-500" /> Memories
-          </li> */}
           <li
             onClick={() => navigate("/albums")}
             className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
           >
             <IoAlbumsOutline className="mr-2 text-purple-500" /> Albums
           </li>
-          {/* <li className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
-            <FaRegImage className="mr-2 text-indigo-500" /> Media Types
-          </li> */}
           <li className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
             <AiOutlineEyeInvisible className="mr-2 text-gray-500" /> Hidden
           </li>
