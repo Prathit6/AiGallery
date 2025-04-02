@@ -9,26 +9,16 @@ import RecentlyDeleted from "./RecentlyDeleted";
 import Objects from "./Objects";
 import People from "./People ";
 import Fev from "./Fev";
-
-
-
-
+import SharedAlbum from "./SharedAlbum";
+import { Settings } from "lucide-react";
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Layout>
-        <Home />
-      </Layout>
-    ),
+    element: <Home />,  
   },
   {
     path: "/library",
-    element: (
-      <Layout>
-        <Home />
-      </Layout>
-    ),
+    element: <Home />, 
   },
   {
     path: "/fullimage",
@@ -66,18 +56,34 @@ const Routes = createBrowserRouter([
     path: "/people",
     element: (
       <Layout>
-        <People/>
+        <People />
       </Layout>
     ),
-  }, {
+  }, 
+  {
     path: "/like",
     element: (
       <Layout>
         <Fev />
       </Layout>
     ),
-  }
-  
+  },
+  {
+    path: "/shared",
+    element: (
+      <Layout>
+        <SharedAlbum />
+      </Layout>
+    ),
+  },
+  {
+    path: "/settings",
+    element: (
+      <Layout>
+        <Settings />
+      </Layout>
+    ),
+  },
 ]);
 
 export default Routes;

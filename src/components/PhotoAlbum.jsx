@@ -38,7 +38,7 @@ const PhotoAlbums = () => {
   const albums = Object.keys(albumCategories).map((category) => ({
     title: category,
     count: albumCategories[category].length,
-    coverImage: albumCategories[category][0]?.url, // Use first photo as cover
+    coverImage: albumCategories[category][0]?.url, 
     photos: albumCategories[category],
   }));
 

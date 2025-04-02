@@ -5,22 +5,28 @@ import {
   faCircleXmark,
   faPlus,
   faCalendarDays,
-  faCompress,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Header({ toggleForIsGap, toggleSidebar }) {
+function Header({ toggleSidebar }) {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleForIsOpen = () => setIsOpen(!isOpen);
 
   return (
-    <>
-      <header className="fixed top-0 left-0 right-0 w-full  bg-white shadow-md z-50">
+    <>  
+      <header className="fixed top-0 left-0 right-0 w-full bg-white shadow-md z-50">
         <div className="flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3">
-          <h2 className="text-lg sm:text-2xl font-bold text-gray-800 hover:text-indigo-600 transition-all duration-300">
-            VisionAI
-          </h2>
+          <div className="flex items-center gap-4">
+            {/* ☰ Sidebar Toggle Button - Works Properly */}
+            <FontAwesomeIcon
+              icon={faBars}
+              onClick={toggleSidebar}
+              className="text-lg text-blue-600 cursor-pointer bg-white p-2 rounded-md shadow-sm hover:text-blue-800 transition"
+            />
+            <h2 className="text-lg sm:text-2xl font-bold text-gray-800 font-[opl3] hover:text-indigo-600 transition-all duration-300">
+              VisionAI
+            </h2>
+          </div>
 
           <div className="flex items-center gap-6">
             <FontAwesomeIcon
@@ -54,25 +60,10 @@ function Header({ toggleForIsGap, toggleSidebar }) {
           </div>
         )}
       </header>
-
-      <div className="fixed top-[58px] left-0 right-0 w-full   z-40">
-        <div className="flex justify-between items-center gap-4 px-4 sm:px-6 lg:px-10 py-3">
-          <div className="flex ml-0 gap-4">
-            <FontAwesomeIcon
-              icon={faBars}
-              onClick={toggleSidebar}
-              className="text-lg text-blue-600 cursor-pointer bg-white p-2 rounded-md shadow-sm hover:text-blue-800 transition"
-            />
-          </div>
-
-          <FontAwesomeIcon
-            icon={faCalendarDays}
-            className="text-lg text-blue-600 cursor-pointer bg-white p-2 rounded-md shadow-sm hover:text-blue-800 transition"
-          />
-        </div>
-      </div>
     </>
   );
 }
 
 export default Header;
+
+

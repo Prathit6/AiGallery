@@ -8,6 +8,7 @@ const photos = [
       author: "Prathit (You)",
       dateAdded: "2025-03-08",
       heart: true,
+      
     }, 
     {
         id: 1,

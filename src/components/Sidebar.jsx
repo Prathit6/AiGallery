@@ -7,8 +7,9 @@ import { RiLinksLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { FaUserFriends } from "react-icons/fa";
 import { GiPhotoCamera } from "react-icons/gi";
+import { Settings } from "lucide-react"; 
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarIconPadding, onSidebarItemClick }) => {
   const navigate = useNavigate();
   return (
     <div className="w-64 h-screen fixed bg-white text-gray-900 p-4 shadow-lg border-r mt-24 border-gray-200">
@@ -18,13 +19,19 @@ const Sidebar = () => {
         </h2>
         <ul>
           <li
-            onClick={() => navigate("/library")}
+            onClick={() => {
+              navigate("/library");
+              onSidebarItemClick();
+            }}
             className="flex items-center p-2 bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer"
           >
             <MdOutlinePhotoLibrary className="mr-2 text-blue-500" /> Library
           </li>
           <li
-            onClick={() => navigate("/like")}
+            onClick={() => {
+              navigate("/like");
+              onSidebarItemClick();
+            }}
             className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
           >
             <FaRegHeart className="mr-2 text-red-500" /> Favourites
@@ -40,13 +47,19 @@ const Sidebar = () => {
         </h2>
         <ul>
           <li
-            onClick={() => navigate("/people")}
+            onClick={() => {
+              navigate("/people");
+              onSidebarItemClick();
+            }}
             className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
           >
             <FaUserFriends className="mr-2 text-green-500" /> People
           </li>
           <li
-            onClick={() => navigate("/objects")}
+            onClick={() => {
+              navigate("/objects");
+              onSidebarItemClick();
+            }}
             className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
           >
             <GiPhotoCamera className="mr-2 text-purple-500" /> Objects
@@ -59,7 +72,10 @@ const Sidebar = () => {
         </h2>
         <ul>
           <li
-            onClick={() => navigate("/albums")}
+            onClick={() => {
+              navigate("/albums");
+              onSidebarItemClick();
+            }}
             className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
           >
             <IoAlbumsOutline className="mr-2 text-purple-500" /> Albums
@@ -68,7 +84,10 @@ const Sidebar = () => {
             <AiOutlineEyeInvisible className="mr-2 text-gray-500" /> Hidden
           </li>
           <li
-            onClick={() => navigate("/recently-deleted")}
+            onClick={() => {
+              navigate("/recently-deleted");
+              onSidebarItemClick();
+            }}
             className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
           >
             <AiOutlineDelete className="mr-2 text-red-600" /> Recently Deleted
@@ -80,11 +99,32 @@ const Sidebar = () => {
           Sharing
         </h2>
         <ul>
-          <li className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <li
+            onClick={() => {
+              navigate("/shared");
+              onSidebarItemClick();
+            }}
+            className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
+          >
             <IoAlbumsOutline className="mr-2 text-teal-500" /> Shared Albums
           </li>
           <li className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
             <RiLinksLine className="mr-2 text-blue-500" /> iCloud Links
+          </li>
+        </ul>
+      </div>
+      
+      {/* Settings Section */}
+      <div className="mt-auto">
+        <ul>
+          <li
+            onClick={() => {
+              navigate("/settings");
+              onSidebarItemClick();
+            }}
+            className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer"
+          >
+            <Settings className="mr-2 text-gray-500" /> Settings
           </li>
         </ul>
       </div>
@@ -93,3 +133,7 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
+
+

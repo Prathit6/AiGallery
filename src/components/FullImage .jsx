@@ -56,7 +56,7 @@ const FullImage = () => {
               className="absolute top-2 left-2 text-xl cursor-pointer"
             />
 
-            {/* LinkedIn Share */}
+       
             <div className="flex flex-col pt-5 items-center">
               <LinkedinShareButton url={shareUrl}>
                 <img src={linkedinLogo} alt="LinkedIn" className="w-12 h-12" />
@@ -64,7 +64,7 @@ const FullImage = () => {
               <p className="text-sm font-medium">LinkedIn</p>
             </div>
 
-            {/* X (Twitter) Share */}
+        
             <div className="flex flex-col pt-5 items-center">
               <TwitterShareButton url={shareUrl} title="Check out this image!">
                 <img src={xLogo} alt="X" className="w-12 h-12" />
@@ -72,7 +72,7 @@ const FullImage = () => {
               <p className="text-sm font-medium">X</p>
             </div>
 
-            {/* WhatsApp Share */}
+          
             <div className="flex flex-col pt-5 items-center">
               <WhatsappShareButton url={shareUrl} title="Check out this image!">
                 <img src={waLogo} alt="WhatsApp" className="w-12 h-12" />
@@ -80,7 +80,7 @@ const FullImage = () => {
               <p className="text-sm font-medium">WhatsApp</p>
             </div>
 
-            {/* Copy Image Link Button */}
+           
             <div className="flex flex-col pt-5 items-center">
               <button onClick={copyToClipboard} className="bg-gray-200 p-2 rounded-lg hover:bg-gray-300">
                 <FontAwesomeIcon icon={faCopy} className="text-lg" />
