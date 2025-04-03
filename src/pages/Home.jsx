@@ -26,8 +26,8 @@ const Home = () => {
   };
 
   return (
-    <div className="relative w-full transition-all duration-300">
-   
+    <div className="relative w-full transition-all duration-300 flex">
+      
       {isSidebarVisible && (
         <div
           className={`fixed top-0 left-0 h-full transition-all duration-300 bg-white shadow-lg z-50 ${
@@ -38,15 +38,10 @@ const Home = () => {
         </div>
       )}
 
-    
-      <div
-        className={`flex flex-col transition-all duration-300 ${
-          isSidebarVisible && !isMobile ? "ml-[250px]" : "ml-0"
-        } ${isMobile && isSidebarVisible ? "hidden" : "w-full"}`}
-      >
-        <Header toggleSidebar={toggleSidebar} /> 
-        <div className="mt-16 flex justify-center items-center min-h-screen">
-          <General /> 
+      <div className="flex-1 flex flex-col transition-all duration-300">
+        <Header toggleSidebar={toggleSidebar} />
+        <div className={`mt-16 flex justify-center items-center min-h-screen transition-all duration-300 ${isSidebarVisible && !isMobile ? "ml-[250px]" : "ml-0"}`}>
+          <General />
         </div>
       </div>
     </div>
